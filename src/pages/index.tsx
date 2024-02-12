@@ -36,7 +36,7 @@ export default function Home() {
     e.preventDefault();
 
     const q = query(
-      collection(db, "certificates/solcha23/for"),
+      collection(db, "certificates/hacking-ai/for"),
       where("email", "==", email),
       limit(1)
     );
