@@ -5,11 +5,9 @@ import localFont from "next/font/local";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { toast } from "sonner";
-import Image from "next/image";
 
 import { db } from "@/config/firebase";
 import Modal from "@/components/Modal";
-import Footer from "@/components/Footer";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -63,7 +61,7 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg">
+    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
       <Modal
         title="In-app browser detected"
         description="To avoid running into issues, we recommend opening the certificate generator in an external browser."
@@ -75,61 +73,29 @@ export default function Home() {
         onClose={() => null}
       />
 
-      <Image
-        src="/images/stack1.png"
-        width={500}
-        height={860}
-        alt="3D SDGs"
-        priority
-        className="pointer-events-none absolute top-0 -left-20 z-10 object-cover hidden lg:block"
-      />
-
-      <Image
-        src="/images/stack2.png"
-        width={740}
-        height={1160}
-        alt="3D SDGs"
-        priority
-        className="pointer-events-none absolute bottom-0 right-0 z-10 object-cover"
-      />
-
-      <div className="glassmorph min-h-[80vh] z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
-        <div className="gap-5 flex flex-col items-center py-32">
-          <Image
-            src="/images/main-logo.svg"
-            width={300}
-            height={200}
-            alt="3D SDGs"
-            priority
-            className="scale-[0.6] md:scale-75 xl:scale-100"
+      <div className="glassmorph border z-30 relative px-7 mx-auto inline-block">
+        <form
+          onSubmit={handleLocate}
+          className="flex flex-col gap-2 py-5  w-full sm:max-w-[400px] max-w-[350px] text-black"
+        >
+          <Input
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+            className="rounded-full pl-5 py-3"
           />
-
-          <p className="text-center text-base md:text-xl xl:mt-4 mb-14">
-            An Introduction to Google Solutions Challenge.
-          </p>
-
-          <form
-            onSubmit={handleLocate}
-            className="flex flex-col gap-2 mt-8 w-full sm:max-w-[400px] max-w-[350px] text-black"
+          <Button
+            type="submit"
+            disabled={loading}
+            className={`bg-green-500 rounded-full text-white ${googleMedium.className}`}
           >
-            <Input
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter your email"
-            />
-            <Button
-              type="submit"
-              disabled={loading}
-              className={`cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg border-blue-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] w-full disabled:cursor-not-allowed ${googleMedium.className}`}
-            >
-              Claim Certificate
-            </Button>
-          </form>
-        </div>
+            Claim Certificate
+          </Button>
+        </form>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 }
