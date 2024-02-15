@@ -83,16 +83,16 @@ export default function Home() {
       />
 
       <div className="glassmorph bottom-12 border-2 rounded-[3rem] border-white/25 max-w-screen-sm z-30 relative p-12 mx-auto inline-block">
-        <div className="text-white space-y-2 text-center font-bold border-b border-white/20 pb-5">
-          <h1 className="text-5xl">Hacking AI</h1>
-          <p className=" text-2xl">Chatbots for Daily Use</p>
+        <div className="text-white space-y-2 text-center border-b border-white/20 pb-5">
+          <h1 className="text-5xl font-bold">Hacking AI</h1>
+          <p className=" text-xl">Chatbots for Daily Use</p>
         </div>
 
         <form
           onSubmit={handleLocate}
-          className="flex flex-col gap-2 py-5  w-full sm:max-w-[400px] max-w-[350px] text-black"
+          className="flex flex-col gap-2 pt-5  w-full sm:max-w-[400px] max-w-[350px] text-black"
         >
-          <p className="text-white font-normal text-center">
+          <p className="text-white/75 font-normal text-center">
             Kindly fill in to claim certificate
           </p>
           <Input
@@ -101,6 +101,7 @@ export default function Home() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
+            className="rounded-full pl-5 py-2 border-gray-700/75 border-[1.5px]"
           />
 
           <Button
