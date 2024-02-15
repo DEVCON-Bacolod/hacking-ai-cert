@@ -22,44 +22,11 @@ export default function Home() {
 
   const [warnModal, setWarnModal] = useState(false);
 
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     if (navigator.userAgent.match(/FBAN|FBAV/i)) {
       setWarnModal(true);
     }
   }, []);
-
-  const handleLocate: FormEventHandler = async (e) => {
-    e.preventDefault();
-
-    const q = query(
-      collection(db, "certificates/hacking-ai/for"),
-      where("email", "==", email),
-      limit(1)
-    );
-
-    try {
-      setLoading(true);
-      const querySnapshot = await getDocs(q);
-      let message = "⚠️ No certificate found";
-
-      querySnapshot.forEach((doc) => {
-        if (doc.data().email) {
-          push(`/cert/${doc.id}`);
-          message = "✅ Certificate found!";
-          return;
-        }
-      });
-
-      toast(message);
-      setLoading(false);
-    } catch (err: any) {
-      toast.error(err.message);
-      setLoading(false);
-    }
-  };
 
   return (
     <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
@@ -83,34 +50,13 @@ export default function Home() {
       />
 
       <div className="glassmorph bottom-12 border-2 rounded-[3rem] border-white/25 max-w-screen-sm z-30 relative p-12 mx-auto inline-block">
-        <div className="text-white space-y-2 text-center font-bold border-b border-white/20 pb-5">
-          <h1 className="text-5xl">Hacking AI</h1>
-          <p className=" text-2xl">Chatbots for Daily Use</p>
-        </div>
-
-        <form
-          onSubmit={handleLocate}
-          className="flex flex-col gap-2 py-5  w-full sm:max-w-[400px] max-w-[350px] text-black"
+        <Button
+          type="button"
+          className={`rounded-full text-white ${googleMedium.className}`}
+          onClick={() => push("/portal")}
         >
-          <p className="text-white font-normal text-center">
-            Kindly fill in to claim certificate
-          </p>
-          <Input
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Enter your email"
-            className="rounded-full pl-5 py-2 border-gray-700/75 border-[1.5px]"
-          />
-          <Button
-            type="submit"
-            disabled={loading}
-            className={`rounded-full text-white ${googleMedium.className}`}
-          >
-            Claim Certificate
-          </Button>
-        </form>
+          Enter Portal
+        </Button>
       </div>
       {/* <Footer /> */}
     </section>
