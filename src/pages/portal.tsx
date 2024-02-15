@@ -79,7 +79,7 @@ export default function Home() {
         width={1436}
         src={"/images/main-bg.png"}
         alt="Background image"
-        className="absolute top-0 left-0 z-0 object-cover w-full h-full"
+        className="absolute top-0 left-0 z-0 object-cover w-full h-full object-center"
       />
 
       <div className="glassmorph bottom-12 border-2 rounded-[3rem] border-white/25 max-w-screen-sm z-30 relative p-12 mx-auto inline-block">
