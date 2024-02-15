@@ -1,13 +1,9 @@
-import { FormEventHandler, useEffect, useState } from "react";
-import { collection, getDocs, limit, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import localFont from "next/font/local";
 import Button from "@/components/Button";
-import Input from "@/components/Input";
-import { toast } from "sonner";
 import Image from "next/image";
 
-import { db } from "@/config/firebase";
 import Modal from "@/components/Modal";
 
 const googleMedium = localFont({
@@ -29,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
+    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black grid place-items-center">
       <Modal
         title="In-app browser detected"
         description="To avoid running into issues, we recommend opening the certificate generator in an external browser."
@@ -49,16 +45,29 @@ export default function Home() {
         className="absolute top-0 left-0 z-0 object-cover w-full h-full"
       />
 
-      <div className="glassmorph bottom-12 border-2 rounded-[3rem] border-white/25 max-w-screen-sm z-30 relative p-12 mx-auto inline-block">
+      <div className="relative z-10">
+        <Image
+          height={300}
+          width={300}
+          src={"/images/devcon-logo-round.png"}
+          alt="Devcon logo"
+          className="z-20 "
+        />
         <Button
           type="button"
-          className={`rounded-full text-white ${googleMedium.className}`}
+          className={`mt-10 w-3/4 mx-auto  rounded-full text-white ${googleMedium.className}`}
           onClick={() => push("/portal")}
         >
           Enter Portal
         </Button>
       </div>
-      {/* <Footer /> */}
+      <Image
+        height={100}
+        width={200}
+        src={"/images/sponsors.png"}
+        alt="sponsor logos"
+        className="z-20 absolute mx-auto bottom-10 "
+      />
     </section>
   );
 }
