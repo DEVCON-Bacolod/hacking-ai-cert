@@ -101,12 +101,12 @@ export default function Home() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
-            className="rounded-full pl-5 py-2 border-gray-700/75 border-[1.5px]"
           />
+
           <Button
             type="submit"
             disabled={loading}
-            className={`rounded-full text-white ${googleMedium.className}`}
+            className={`text-white mx-auto ${googleMedium.className}`}
           >
             Claim Certificate
           </Button>
