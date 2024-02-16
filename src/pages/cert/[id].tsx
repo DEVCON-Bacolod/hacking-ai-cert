@@ -14,7 +14,7 @@ import { db } from "@/config/firebase";
 import Button from "@/components/Button";
 import { Icons } from "@/components/Icons";
 import certImage from "@/images/certificate.png";
-import Footer from "@/components/Footer";
+import mainBg from "@/images/main-bg.png";
 
 const googleBold = localFont({
   src: "../../../public/fonts/Google-Sans-Bold.woff2",
@@ -117,12 +117,10 @@ export default function Cert() {
   return (
     <div>
       <Image
-        src="/images/bg.jpg"
-        width={1920}
-        height={1080}
+        src={mainBg}
         alt="Grid bg"
         priority
-        className="pointer-events-none object-cover absolute h-full top-0 left-0 text-center z-10 opacity-20 object-center w-full"
+        className="pointer-events-none object-cover absolute h-full top-0 left-0 text-center z-10 object-center w-full"
       />
 
       <form
@@ -147,7 +145,7 @@ export default function Cert() {
                 />
 
                 <h2
-                  className={`absolute z-10 sm:mt-12 lg:mt-11 mt-6 text-[#171717] [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
+                  className={`absolute z-10 sm:mt-12 lg:mt-11 mt-6 text-white [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
                 >
                   {data.firstName} {data.lastName}
                 </h2>
@@ -155,16 +153,16 @@ export default function Cert() {
             </Tilt>
             <div className="flex items-center mt-8 space-x-2 sm:space-x-4">
               {imgLoading ? (
-                <Icons.spinner className="w-6 h-6" />
+                <Icons.spinner className="text-white w-6 h-6" />
               ) : (
                 <>
                   <Link href="/">
-                    <Icons.arrowLeft className="h-10 w-10" />
+                    <Icons.arrowLeft className="h-10 text-white/75  w-10" />
                   </Link>
 
                   <Button
                     type="button"
-                    className="bg-blue-500 text-white text-xs sm:text-base"
+                    className="bg-zinc-800 text-white text-xs sm:text-base"
                     disabled={imgLoading}
                     onClick={saveImage}
                   >
@@ -173,7 +171,7 @@ export default function Cert() {
 
                   <Button
                     type="submit"
-                    className="bg-blue-500 text-white text-xs sm:text-base whitespace-nowrap"
+                    className="bg-zinc-800 text-white text-xs sm:text-base whitespace-nowrap"
                     disabled={imgLoading}
                   >
                     Send to Email
@@ -183,7 +181,6 @@ export default function Cert() {
             </div>
           </>
         )}
-        <Footer />
       </form>
     </div>
   );

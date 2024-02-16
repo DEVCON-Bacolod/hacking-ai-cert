@@ -1,6 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { Analytics, getAnalytics } from 'firebase/analytics';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { Analytics, getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
 // eslint-disable-next-line import/no-mutable-exports
 let analytics: Analytics;
@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   analytics = getAnalytics(app);
 }
 

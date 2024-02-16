@@ -53,7 +53,7 @@ export default function Home() {
         />
         <Button
           type="button"
-          className={`mt-10 w-3/4 mx-auto  rounded-full text-white ${googleMedium.className}`}
+          className={`mt-10 w-3/4 mx-auto  rounded-full bg-zinc-800 text-white ${googleMedium.className}`}
           onClick={() => push("/portal")}
         >
           Enter Portal
