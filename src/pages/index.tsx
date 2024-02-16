@@ -5,6 +5,8 @@ import Button from "@/components/Button";
 import Image from "next/image";
 
 import Modal from "@/components/Modal";
+import mainBg from "../../public/images/main-bg.png";
+import devconLogoRound from "../../public/images/devcon-logo-round.png";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -38,20 +40,16 @@ export default function Home() {
       />
 
       <Image
-        height={2552}
-        width={1436}
-        src={"/images/main-bg.png"}
+        src={mainBg}
         alt="Background image"
         className="absolute top-0 left-0 z-0 object-cover w-full h-full"
       />
 
       <div className="relative z-10">
         <Image
-          height={300}
-          width={300}
-          src={"/images/devcon-logo-round.png"}
+          src={devconLogoRound}
           alt="Devcon logo"
-          className="z-20 "
+          className="relative top-1"
         />
         <Button
           type="button"

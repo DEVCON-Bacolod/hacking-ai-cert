@@ -10,6 +10,7 @@ import Image from "next/image";
 import { db } from "@/config/firebase";
 import Modal from "@/components/Modal";
 import Navbar from "@/components/Navbar";
+import mainBg from "../../public/images/main-bg.png";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -77,9 +78,7 @@ export default function Home() {
       />
 
       <Image
-        height={2552}
-        width={1436}
-        src={"/images/main-bg.png"}
+        src={mainBg}
         alt="Background image"
         className="absolute top-0 left-0 z-0 object-cover w-full h-full object-center"
       />
