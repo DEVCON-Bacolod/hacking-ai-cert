@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { db } from "@/config/firebase";
 import Modal from "@/components/Modal";
+import Navbar from "@/components/Navbar";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -63,6 +64,7 @@ export default function Home() {
 
   return (
     <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
+      <Navbar />
       <Modal
         title="In-app browser detected"
         description="To avoid running into issues, we recommend opening the certificate generator in an external browser."

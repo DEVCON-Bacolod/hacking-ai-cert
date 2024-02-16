@@ -8,7 +8,7 @@ export default function Layout({
   children: ReactNode;
 }) {
   return (
-    <main className={`bg-white mx-auto font-google-reg ${className}`}>
+    <main className={`bg-black mx-auto font-google-reg ${className}`}>
       {children}
     </main>
   );
