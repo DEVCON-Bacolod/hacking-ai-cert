@@ -128,7 +128,7 @@ export default function Cert() {
         className="flex flex-col items-center justify-center min-h-screen px-8 z-50 relative"
       >
         {loading ? (
-          <Icons.spinner className="w-6 h-6" />
+          <Icons.spinner className="text-white w-6 h-6" />
         ) : !data.email ? (
           <p>Certificate not found</p>
         ) : (

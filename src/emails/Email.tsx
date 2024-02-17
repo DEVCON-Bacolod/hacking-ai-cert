@@ -30,18 +30,16 @@ export const CertificateEmail = ({ id, firstName, lastName }: Props) => {
         <Body className="bg-white my-auto mx-auto font-sans">
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-              <strong>CTRL + Solve</strong>
+              <strong>DEVCON Bacolod: Hacking AI</strong>
             </Heading>
             <Text>
               Hello {firstName} {lastName},
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
               We&apos;re excited to let you know that your certificate for{" "}
-              <strong>
-                Ctrl + Solve: An Introduction to Google Solution Challenge
-              </strong>{" "}
-              is ready and waiting for you. 🎉 To claim it, just click the
-              button below or check out the attached image:
+              <strong>Hacking AI: Chatbots for daily life</strong> is ready and
+              waiting for you. 🎉 To claim it, just click the button below or
+              check out the attached image:
             </Text>
             <Section className="text-center mt-[32px] mb-[32px]">
               <Button
