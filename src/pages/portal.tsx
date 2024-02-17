@@ -64,7 +64,7 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
+    <section className="h-screen pt-10 lg:pt-20 relative font-google-reg bg-black flex justify-center items-center">
       <Navbar />
       <Modal
         title="In-app browser detected"

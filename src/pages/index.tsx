@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg bg-black grid place-items-center">
+    <section className="h-screen pt-10 lg:pt-20 relative font-google-reg bg-black grid place-items-center">
       <Modal
         title="In-app browser detected"
         description="To avoid running into issues, we recommend opening the certificate generator in an external browser."
