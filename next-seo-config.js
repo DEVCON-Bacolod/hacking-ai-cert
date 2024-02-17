@@ -1,8 +1,8 @@
 const description =
-  "Certificate Generator for Ctrl + Solve: An Introduction to Google Solution Challenge";
+  "Certificate Generator for HACKING AI: Chatbots for Daily Life";
 
 export default {
-  title: "DEVCON Bacolod: Hacking AI Certificate Generator",
+  title: "Hacking AI Certificate Generator | DEVCON Bacolod",
   description,
   openGraph: {
     type: "website",
@@ -14,11 +14,11 @@ export default {
         url: "/images/thumbnail.png",
         width: 1400,
         height: 800,
-        alt: "solcha-intro",
+        alt: "DEVCON Hacking AI",
         type: "image/png",
       },
     ],
-    site_name: "DEVCON Bacolod: Hacking AI Certificate Generator",
+    site_name: "Hacking AI Certificate Generator | DEVCON Bacolod",
   },
   twitter: {
     cardType: "summary_large_image",
