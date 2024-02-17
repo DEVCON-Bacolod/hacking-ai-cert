@@ -41,6 +41,7 @@ export default function Home() {
 
       <Image
         src={mainBg}
+        priority
         alt="Background image"
         className="absolute top-0 left-0 z-0 object-cover w-full h-full"
       />
@@ -48,6 +49,7 @@ export default function Home() {
       <div className="relative z-10">
         <Image
           src={devconLogoRound}
+          priority
           alt="Devcon logo"
           className="relative top-1"
         />

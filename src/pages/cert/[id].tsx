@@ -118,7 +118,7 @@ export default function Cert() {
     <div>
       <Image
         src={mainBg}
-        alt="Grid bg"
+        alt="bg"
         priority
         className="pointer-events-none object-cover absolute h-full top-0 left-0 text-center z-10 object-center w-full"
       />

@@ -79,6 +79,7 @@ export default function Home() {
 
       <Image
         src={mainBg}
+        priority
         alt="Background image"
         className="absolute top-0 left-0 z-0 object-cover w-full h-full object-center"
       />
